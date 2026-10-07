@@ -1,6 +1,6 @@
-FVi fick ett projekt vi ska göra. Här är dagbok och problem vi stötte på.
+Vi fick ett projekt vi ska göra. Här är dagbok och problem vi stötte på.
 
-örst diskuterade vi vad vi skulle hitta på. Vi valde nummer 2 av dom 3 projekten.
+Först diskuterade vi vad vi skulle hitta på. Vi valde nummer 2 av dom 3 projekten.
 
 Regel:1 
 
