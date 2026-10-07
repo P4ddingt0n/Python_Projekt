@@ -1,0 +1,7 @@
+VLAN_ID,VLAN_Namn,Subnät,Beskrivning,Status
+
+10,Kontor,158.195.10.0/26,Nätverk för personal på Kontor,Aktivt
+20,Ekonomi,158.195.10.64/26,Nätverk för personal på Eko,Aktivt
+30,Gäst,158.195.10.128/26,Nätverkverk gäster,Aktivt
+40,DRIFT,158.195.10.192/26,Nätverk för Drifttekniker,Aktivt
+
