@@ -1,21 +1,33 @@
 import csv
+import ipaddress
 
-with open("cvs tabell.cvs", "r") as file:
-    reader = csv.DictReader(file)
 
-    for row in reader:
-        vlan = row["vlan"]
-        name = row["name"]
-        network = row["network"]
-        default_router = row["default_router"]
+CSV_FILE = "csv_tabell"
 
-        config = f"""!
-vlan {vlan}
- name {name}
+
+def generate_config(row):
+    vlan_id = row["VLAN_ID"]
+    vlan_name = row["VLAN_Namn"]
+    subnet = ipaddress.ip_network(row["Subnät"])
+
+    # Första användbara IP-adressen används som default gateway
+    gateway = next(subnet.hosts())
+    netmask = subnet.netmask
+
+    return f"""!
+vlan {vlan_id}
+ name {vlan_name}
 !
-interface vlan {vlan}
- ip address {default_router} 255.255.255.0
+interface vlan {vlan_id}
+ description {row["Beskrivning"]}
+ ip address {gateway} {netmask}
 !
 """
 
-        print(config)
+
+with open(CSV_FILE) as file:
+    reader = csv.DictReader(file)
+
+    for row in reader:
+        
+        print(generate_config(row))
