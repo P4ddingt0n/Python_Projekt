@@ -1,4 +1,4 @@
-RUNNING_CONFIG = "running-config.txt"
+RUNNING_CONFIG = "test_config.txt"
 
 def get_existing_vlans():
     vlans = set()
@@ -9,13 +9,6 @@ def get_existing_vlans():
 
             if line.startswith("interface Vlan"):
                 vlans.add(line.split("Vlan")[1])
-
-            elif "switchport access vlan" in line:
-                vlans.add(line.split()[-1])
-
-            elif "switchport trunk allowed vlan" in line:
-                vlans.update(line.split()[-1].split(","))
-
     return vlans
 
 

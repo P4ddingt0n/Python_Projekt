@@ -1,7 +1,7 @@
 import csv
 
 # Läs VLAN från CSV-filen
-with open("vlan_cvs_read", "r") as file:
+with open("vlan_read.py", "r") as file:
     reader = csv.DictReader(file)
 
     for row in reader:
